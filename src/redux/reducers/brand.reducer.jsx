@@ -1,7 +1,6 @@
 import {
   FETCH_BRANDS,
   ADD_BRAND,
-  DELETE_BRAND_BY_ID,
   UPDATE_BRAND_BY_ID,
 } from "../async-actions/actionType"
 

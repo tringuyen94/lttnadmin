@@ -15,7 +15,7 @@ class BrandServices {
   }
   updateBrandById(value, brandId) {
     return restConnector({
-      url: `/api/brands/${brandId}`,
+      url: `api/brands/${brandId}`,
       method: "PUT",
       data: value,
     })

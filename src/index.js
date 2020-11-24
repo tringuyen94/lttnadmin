@@ -8,6 +8,7 @@ import thunk from "redux-thunk"
 import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 import rootReducer from "./redux/reducers/root.reducer"
+
 const initialState = {}
 const middlewares = [thunk]
 const store = createStore(
@@ -19,11 +20,13 @@ const store = createStore(
   )
 )
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
   document.getElementById("root")
 )
 

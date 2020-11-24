@@ -54,6 +54,22 @@ const Main = () => {
                 </div>
               </a>
             </div>
+            <div className="col-md-3">
+              <a href="/chat">
+                <div className="card">
+                  <img
+                    className="card-img-top"
+                    src={require("../../img/chat.jpg")}
+                    alt="#product"
+                    height="250px"
+                  />
+
+                  <div className="card-body">
+                    <h4 className="card-title">Chat</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
