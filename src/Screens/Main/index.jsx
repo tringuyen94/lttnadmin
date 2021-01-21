@@ -1,6 +1,4 @@
 import React, { Fragment } from "react"
-import Navbar from "../../Layouts/navbar"
-import ListAltIcon from "@material-ui/icons/ListAlt"
 
 const Main = () => {
   return (

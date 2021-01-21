@@ -1,15 +1,6 @@
 import React from "react"
-import { makeStyles } from "@material-ui/core"
 import Moment from "react-moment"
-import ScrollToBottom from "react-scroll-to-bottom"
-const useStyles = makeStyles((theme) => ({
-  scroll: {
-    width: 550,
-    height: 430,
-  },
-}))
 const Conversations = ({ messages }) => {
-  const classes = useStyles()
   const renderMessages = () => {
     return (
       messages &&
@@ -33,9 +24,7 @@ const Conversations = ({ messages }) => {
   }
   return (
     <div className="conversations">
-      <ScrollToBottom className={classes.scroll}>
-        {renderMessages()}
-      </ScrollToBottom>
+      {renderMessages()}
     </div>
   )
 }

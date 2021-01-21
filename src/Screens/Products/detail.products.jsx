@@ -178,7 +178,7 @@ const DetailProduct = ({
             </FormControl>
             <br />
             <Button variant="contained" color="primary" onClick={handleSubmit}>
-              Cập nhật sản phẩm
+              Lưucd
             </Button>
           </form>
         </div>

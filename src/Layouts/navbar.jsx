@@ -13,16 +13,11 @@ const Navbar = ({ user, history, dispatch }) => {
       <nav className="navbar navbar-expand-lg " color-on-scroll={500}>
         <div className="container-fluid">
           <div
-            className="collapse navbar-collapse justify-content-end"
+            className="collapse navbar-collapse justify-content-center"
             id="navigation"
           >
             <Sidebar />
             <ul className="navbar-nav ml-auto">
-              <li>
-                <b>
-                  {fullName} <SupervisorAccountIcon />
-                </b>
-              </li>
               <li>
                 <Button
                   variant="outlined"

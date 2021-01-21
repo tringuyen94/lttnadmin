@@ -6,16 +6,22 @@ import Conversations from "./conversations.chat"
 import InputMessage from "./inputmessage.chat"
 import io from "socket.io-client"
 import { domain } from "../../services/baseURL.services"
+import Sound from "../../img/notification.mp3"
+
 const socket = io(`${domain}/admin`)
+const notiSound = new Audio(Sound)
 const Chat = () => {
   const [conversations, setConversations] = useState([])
   const [messages, setMessages] = useState([])
   const [phoneNumber, setPhoneNumber] = useState()
+  const [conversationId, setConversationId] = useState()
   const [socketId, setSocketId] = useState()
   const [search, setSearch] = useState()
   const [deleteConversation, setDeleteConversation] = useState()
+  const [displayMessage, setDisplayMessage] = useState(false)
   useEffect(() => {
     socket.on("client-joint", (data) => {
+      notiSound.play()
       setConversations([...conversations, data])
     })
     socket.on("conversation-by-id", (data) => {
@@ -30,27 +36,35 @@ const Chat = () => {
     socket.on("get-conversations", (content) => {
       setConversations(content)
     })
-  }, [conversations, messages, deleteConversation])
+  }, [conversations, messages])
   const getConversationByAction = () => {
     if (search) {
       return conversations.filter((con) => con.phoneNumber.includes(search))
-    } else if (deleteConversation) {
-      socket.emit("delete-conversation", deleteConversation)
-      return conversations.filter((con) => con.socketId !== deleteConversation)
-    } else return conversations
+    }
+    else if (deleteConversation) {
+      let index = conversations.findIndex(con => con._id == deleteConversation)
+      if (index > -1) {
+        conversations.splice(index, 1)
+        socket.emit('delete-conversation', deleteConversation)
+      }
+      return conversations
+    }
+    return conversations
   }
+
   return (
     <div className="Chat">
       <SearchBox search={search} setSearch={setSearch} />
       <ListChat
         conversations={getConversationByAction()}
         setPhoneNumber={setPhoneNumber}
-        setSocketId={setSocketId}
+        setConversationId={setConversationId}
         socket={socket}
+        setSocketId={setSocketId}
       />
       <TitleChat
         phoneNumber={phoneNumber}
-        socketId={socketId}
+        conversationId={conversationId}
         setDeleteConversation={setDeleteConversation}
       />
       <Conversations messages={messages} />

@@ -3,27 +3,39 @@
   NAVBAR CSS
 ====================================================
 */
+
 .navbar {
-  background: linear-gradient(to right, #bbd2c5, #536976, #292e49);
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to left, #bbd2c5, #536976, #292e49);
+  margin-bottom: 20px;
 }
+.MuiIconButton-label {
+  color: lightskyblue;
+  outline: 0;
+}
+
 .navbar-nav {
   color: white;
 }
+
 .navbar-nav li {
   margin: 0 10px;
   margin-bottom: 20px;
 }
+
 /*
 ====================================================
   MAIN
 ====================================================
 */
+
 .main {
   position: absolute;
-  background: linear-gradient(to right, #bbd2c5, #536976, #292e49);
   height: 100%;
   width: 100%;
 }
+
 .main .card {
   box-shadow: 5px 10px;
 }
@@ -38,25 +50,30 @@
   display: none;
   transition: ease 0.5s;
 }
+
 .main .card:hover {
   border: 1px solid rgb(67, 67, 206);
 }
+
 .main .card:hover .card-img-top {
   filter: blur(2px);
   -webkit-filter: blur(2px);
 }
+
 .main .card:hover .card-body {
   display: block;
 }
+
 /*
 ====================================================
   BACKGROUND 
 ====================================================
 */
+
 body {
-  background: linear-gradient(-45deg, #ee7752, #b3bfff, #536976, #bbd2c5);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: url("./img/main-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   min-height: 100%;
   margin-bottom: 200px;
@@ -66,17 +83,6 @@ body {
   border: 0;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 /*
 ====================================================
   AUTHENTICATION 
@@ -92,16 +98,19 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .loginform {
   width: 450px;
   height: 300px;
-  box-shadow: 0px 5px 10px brown;
+  box-shadow: 0px 5px 100px brown;
   margin: 160px auto;
 }
+
 .loginform .input {
   margin: 25px 20px;
   width: 410px;
 }
+
 .loginform button {
   width: 200px;
   padding: 15px;
@@ -113,6 +122,7 @@ body {
   PRODUCT 
 ====================================================
 */
+
 #addproducts {
   margin: 0 auto;
   width: 850px;
@@ -121,28 +131,34 @@ body {
 .switch {
   margin: 0 auto;
 }
+
 /*
 ====================================================
   BRAND CSS
 ====================================================
 */
+
 .inputBrand {
   margin: 0 auto;
   width: 400px;
 }
+
 .btnSubmitBrand {
   margin: 0 353px;
   width: 400px;
 }
+
 /*
 ====================================================
   CATEGORY 
 ====================================================
 */
+
 #formAddCategory {
   width: 300px;
   margin: 0 auto;
 }
+
 /*
 ====================================================
   FOOTER
@@ -151,9 +167,9 @@ body {
 
 .footer {
   position: fixed;
+  display: block;
   opacity: 0.8;
   background: linear-gradient(to left, #bbd2c5, #536976, #292e49);
-  left: 0;
   bottom: 0;
   width: 100%;
   color: white;
@@ -174,12 +190,15 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
 .sidebar-menu li:hover {
   background-color: rgb(113, 230, 230);
 }
+
 .sidebar-menu li:hover .sidebar-links {
   color: white;
 }
+
 .sidebar-links:link {
   text-decoration: none;
   font-size: 1.25rem;
@@ -190,16 +209,19 @@ body {
   BREADCRUMP
 ====================================================
 */
+
 .breadcrump {
   list-style: none;
   display: flex;
   align-items: center;
 }
+
 .breadcrumb-separator {
   color: #333;
   margin: auto 6px;
   user-select: none;
 }
+
 .breadcrumb-collapser {
   display: flex;
   align-items: center;
@@ -212,6 +234,7 @@ body {
   width: 25px;
   height: 25px;
 }
+
 .breadcrumb-collapser svg:hover,
 .breadcrumb-collapser svg:focus {
   color: #999;
@@ -221,6 +244,7 @@ body {
 .breadcrumb-collapser svg:active {
   color: #333;
 }
+
 /*
 ====================================================
   CHAT
@@ -241,14 +265,13 @@ body {
   max-height: 800px;
   grid-template-columns: 30% 70%;
   grid-template-rows: 10% 80% 10%;
-  grid-template-areas:
-    "search-box title-chat"
-    "list-chat conversations"
-    "list-chat input-message";
+  grid-template-areas: "search-box title-chat" "list-chat conversations" "list-chat input-message";
   border-radius: 10px;
   box-shadow: -30px 30px 20px rgba(0, 0, 0, 0.5);
 }
+
 /* -----------------------SEARCH BOX----------------------------- */
+
 .search-box {
   grid-area: search-box;
   background-color: #002c88;
@@ -258,6 +281,7 @@ body {
   z-index: 1;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 }
+
 .search-box input {
   padding: 10px 10px;
   padding-left: 10px;
@@ -272,9 +296,11 @@ body {
   color: whitesmoke;
   font-style: oblique;
 }
+
 .search-box input:focus {
   box-shadow: 0px 0px 30px 10px rgba(255, 81, 0, 0.8);
 }
+
 /* -----------------------TITLE CHAT----------------------------- */
 
 .title-chat {
@@ -285,34 +311,40 @@ body {
   background-color: #eee;
   border-radius: 0px 10px 0px 0px;
 }
+
 .title-chat .name {
   letter-spacing: 0.7px;
   color: #1976d2;
   font-weight: bolder;
   padding-left: 10px;
 }
+
 .title-chat .icon {
+  color: #1976d2;
   margin: 15px;
-}
-.title-chat .icon button {
-  /* border-radius: 50%; */
-  outline: none;
-  /* border: none; */
   cursor: pointer;
+  border-radius: 0px;
+  transition: all 0.5s ease;
+}
+
+.title-chat .icon:hover {
+  color: rgb(230, 59, 88);
 }
 /* ---------------------------LIST CHAT---------------------- */
+
 .list-chat {
   grid-area: list-chat;
   background-color: #002c88;
   overflow-y: scroll;
   border-radius: 0px 0px 0px 10px;
   box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
-
   /* border-radius: 0 0 0 10px; */
 }
+
 .list-chat::-webkit-scrollbar {
   display: none;
 }
+
 .list-item {
   display: grid;
   grid-template-columns: 70% 20% 10%;
@@ -321,10 +353,12 @@ body {
   color: #eee;
   align-self: center;
 }
+
 .list-item:hover {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   background-color: #3f51b5;
 }
+
 .list-item .name {
   padding-top: 10px;
   padding-left: 15px;
@@ -334,6 +368,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .list-item .sent-date {
   font-size: 0.8rem;
   font-style: italic;
@@ -349,6 +384,7 @@ body {
   text-overflow: ellipsis;
   font-size: 0.8rem;
 }
+
 .list-item .notification {
   margin-right: 5px;
   margin-top: 5px;
@@ -361,6 +397,7 @@ body {
 }
 
 /*------------------------ CONVERSATION------------------------------ */
+
 .conversations {
   grid-area: conversations;
   display: flex;
@@ -373,11 +410,13 @@ body {
   grid-template-columns: 80%;
   margin-bottom: 10px;
 }
+
 .you-message {
   justify-content: end;
   justify-items: end;
   margin-right: 5px;
 }
+
 .other-message {
   justify-items: start;
   margin-left: 10px;
@@ -395,10 +434,12 @@ body {
   color: #eee;
   background: #0048aa;
 }
+
 .text {
   padding: 10px 15px;
   font-size: 1rem;
 }
+
 .time {
   font-size: 0.8rem;
   font-style: italic;
@@ -407,6 +448,7 @@ body {
 }
 
 /* -------------------------------INPUT MESSAGE-------------------- */
+
 .input-message {
   grid-area: input-message;
   display: flex;
@@ -424,6 +466,7 @@ body {
   border: none;
   outline: none;
 }
+
 .input-message input:focus {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }

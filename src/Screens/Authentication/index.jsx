@@ -20,11 +20,12 @@ const Authentication = ({ dispatch, history }) => {
     <Fragment>
       <div className="authentication">
         <div className="container">
-          <form onSubmit={handleLogin} className="loginform">
+          <form onSubmit={handleLogin} className="loginform" autoComplete="off">
             <TextField
               className="input"
               variant="outlined"
               name="email"
+              autoFocus={true}
               label="Email"
               onChange={handleChange}
               required

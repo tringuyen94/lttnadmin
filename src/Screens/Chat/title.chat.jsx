@@ -1,17 +1,14 @@
 import React from "react"
-import DeleteConfirm from "./deleteconfirm.chat"
+import { Delete } from "@material-ui/icons"
 
-const TitleChat = ({ phoneNumber, socketId, setDeleteConversation }) => {
+const TitleChat = ({ phoneNumber, conversationId, setDeleteConversation }) => {
   return (
     <div className="title-chat">
       <div className="title-chat name">
         <h3>{phoneNumber}</h3>
       </div>
       <div className="title-chat icon">
-        <DeleteConfirm
-          socketId={socketId}
-          setDeleteConversation={setDeleteConversation}
-        />
+        <Delete onClick={() => setDeleteConversation(conversationId)} />
       </div>
     </div>
   )

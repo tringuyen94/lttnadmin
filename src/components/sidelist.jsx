@@ -5,6 +5,7 @@ import HomeRoundedIcon from "@material-ui/icons/HomeRounded"
 import ComputerRoundedIcon from "@material-ui/icons/ComputerRounded"
 import AppsRoundedIcon from "@material-ui/icons/AppsRounded"
 import BlurOnIcon from "@material-ui/icons/BlurOn"
+import Chat from "@material-ui/icons/Chat"
 const useStyles = makeStyles({
   icon: {
     position: "relative",
@@ -40,6 +41,12 @@ const SideList = () => {
           <NavLink to="/brands" className="sidebar-links">
             <BlurOnIcon className={classes.icon} />
             Nhãn hàng
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/chat" className="sidebar-links">
+            <Chat className={classes.icon} />
+            Chat
           </NavLink>
         </li>
       </ul>
