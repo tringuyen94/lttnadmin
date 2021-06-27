@@ -4,11 +4,11 @@ import TitleChat from "./title.chat"
 import ListChat from "./listchat.chat"
 import Conversations from "./conversations.chat"
 import InputMessage from "./inputmessage.chat"
-import io from "socket.io-client"
-import { domain } from "../../services/baseURL.services"
+// import io from "socket.io-client"
+// import { domain } from "../../services/baseURL.services"
 import Sound from "../../img/notification.mp3"
 
-const socket = io(`${domain}/admin`)
+// const socket = io(`${domain}/admin`)
 const notiSound = new Audio(Sound)
 const Chat = () => {
   const [conversations, setConversations] = useState([])

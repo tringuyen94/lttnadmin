@@ -90,7 +90,6 @@ body {
 */
 
 .authentication {
-  background-image: url("./img/authenBackground.jpg");
   position: absolute;
   height: 100%;
   width: 100%;
@@ -102,7 +101,6 @@ body {
 .loginform {
   width: 450px;
   height: 300px;
-  box-shadow: 0px 5px 100px brown;
   margin: 160px auto;
 }
 
@@ -470,3 +468,4 @@ body {
 .input-message input:focus {
   box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
 }
+/* -------------------------------DETAIL PRODUCT-------------------- */

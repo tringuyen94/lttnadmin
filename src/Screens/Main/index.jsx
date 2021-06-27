@@ -52,7 +52,7 @@ const Main = () => {
                 </div>
               </a>
             </div>
-            <div className="col-md-3">
+            {/* <div className="col-md-3">
               <a href="/chat">
                 <div className="card">
                   <img
@@ -67,7 +67,7 @@ const Main = () => {
                   </div>
                 </div>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

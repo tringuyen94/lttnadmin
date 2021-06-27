@@ -4,10 +4,8 @@ import {
   updateProductById,
 } from "../../redux/async-actions/product.action"
 import { connect } from "react-redux"
-import { makeStyles } from "@material-ui/core/styles"
 import {
   TextField,
-  TextareaAutosize,
   Button,
   NativeSelect,
   InputLabel,
@@ -21,15 +19,6 @@ import { fetchBrands } from "../../redux/async-actions/brand.action"
 import ReactQuill from "react-quill"
 import "react-quill/dist/quill.snow.css"
 
-const useStyles = makeStyles((theme) => ({
-  detail: {
-    width: "1100px",
-  },
-  button: {
-    margin: "20px 0",
-    padding: "10px 20px",
-  },
-}))
 const DetailProduct = ({
   match,
   history,
@@ -87,48 +76,34 @@ const DetailProduct = ({
   return (
     productById && (
       <Fragment>
-        <div className="container mt-3">
+        <div className="detail__wrapper container mt-3">
           <form>
-            <img
-              src={domain + "/" + productById.image.path}
-              alt="#product"
-              width="100px"
-            />
-            <input type="file" name="image" onChange={handleFile} />
-            Cập nhật hình ảnh
-            <img
-              src={uploadImageUrl}
-              width="100px"
-              id="preview__image border border-1 mt-2"
-            />
-            <TextField
-              label="Tên sản phẩm"
-              defaultValue={productById.name}
-              variant="filled"
-              onChange={handleChange}
-              fullWidth={true}
-              name="name"
-            />
-            <FormControl style={{ width: "200px", margin: "10px" }}>
-              <InputLabel htmlFor="category">Loại sản phẩm</InputLabel>
-              <NativeSelect
-                inputProps={{
-                  name: "category",
-                  id: "category",
-                }}
+            <div>
+              <img
+                src={domain + "/" + productById.image.path}
+                alt="#product"
+                width="100px"
+              />
+              <input type="file" name="image" onChange={handleFile} />
+              <label >Cập nhật hình ảnh</label>
+              <img
+                src={uploadImageUrl}
+                width="100px"
+                id="preview__image border border-1 mt-2"
+              />
+            </div>
+
+            <FormControl style={{ width: "400px", margin: "10px 20px" }} >
+              <TextField
+                label="Tên sản phẩm"
+                defaultValue={productById.name}
+                variant="filled"
                 onChange={handleChange}
-              >
-                {categories &&
-                  categories.map((category, index) => {
-                    return (
-                      <option key={index} value={category._id}>
-                        {category.nameCategory}
-                      </option>
-                    )
-                  })}
-              </NativeSelect>
+                fullWidth={true}
+                name="name"
+              />
             </FormControl>
-            <FormControl style={{ width: "200px", margin: "10px 20px" }}>
+            <FormControl style={{ width: "400px", margin: "10px 20px" }}>
               <InputLabel htmlFor="brand">Tên nhãn hàng</InputLabel>
               <NativeSelect
                 inputProps={{
@@ -147,13 +122,15 @@ const DetailProduct = ({
                   })}
               </NativeSelect>
             </FormControl>
-            <FormControl>
+            <br />
+            <FormControl style={{ width: "800px", margin: "10px 20px" }}>
               <ReactQuill
                 defaultValue={productById.detail}
                 onChange={handleDetailChange}
               />
             </FormControl>
-            <FormControl style={{ width: "200px", margin: "10px 0" }}>
+            <br />
+            <FormControl style={{ width: "200px", margin: "10px 20px" }}>
               <TextField
                 name="capacity"
                 label="Công suất"
@@ -178,11 +155,11 @@ const DetailProduct = ({
             </FormControl>
             <br />
             <Button variant="contained" color="primary" onClick={handleSubmit}>
-              Lưucd
+              Lưu
             </Button>
           </form>
         </div>
-      </Fragment>
+      </Fragment >
     )
   )
 }
